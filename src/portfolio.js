@@ -126,19 +126,19 @@ const educationInfo = {
       logo: require("./assets/images/unccLogo.png"),
       subHeader: "Master of Science in Computer Science",
       duration: "August 2022 - December 2023",
-      desc: "Participated in the research of XXX and published 3 papers.",
-      descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
+      // desc: "Participated in the research of XXX and published 3 papers.",
+      // descBullets: [
+        // "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        // "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      // ]
     },
     {
       schoolName: "Guru Nanak Institutions Technical Campus",
       logo: require("./assets/images/gniLogo.jpg"),
       subHeader: "Bachelor of Technology in Computer Science",
       duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
+      // desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
+      // descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
     }
   ]
 };
@@ -174,7 +174,7 @@ const workExperiences = {
       company: "Juspay",
       companylogo: require("./assets/images/juspayLogo.jpeg"),
       date: "June 2021 – July 2022",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       descBullets: [
         "Developed a scalable and modular microservice architecture for card tokenization, comprising different microservices for generic processing and an api-gateway for external service interaction.",
         "Developed and maintained REST APIs using Spring Boot, Redis and AWS. Successfully integrating major card networks such as Mastercard and Visa, and tokenized more than 100 million cards.",
@@ -187,7 +187,7 @@ const workExperiences = {
       company: "Juspay",
       companylogo: require("./assets/images/juspayLogo.jpeg"),
       date: "December 2020 – June 2021",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       descBullets: [
         "Collaborated closely with Software Architects and Senior Developers to design and implement high-quality software solutions using Design patterns, and SOLID principles that follow best practices and industry standards.",
         "Worked on the Card on File (COF) project. In this, users could select a list of merchants to which their card needs to be added and manage them through the bank app, resulting in a 50% reduction in transaction time.",
