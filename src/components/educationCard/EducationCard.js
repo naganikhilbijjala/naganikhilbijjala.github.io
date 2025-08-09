@@ -1,3 +1,4 @@
+"use client";
 import React, {createRef, useContext} from "react";
 import {Fade, Slide} from "react-reveal";
 import "./EducationCard.scss";

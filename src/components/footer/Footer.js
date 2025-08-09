@@ -1,3 +1,4 @@
+"use client";
 import React, {useContext} from "react";
 import "./Footer.scss";
 import {Fade} from "react-reveal";

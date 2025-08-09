@@ -1,3 +1,4 @@
+"use client";
 import React, {useState, useContext} from "react";
 import emoji from "react-easy-emoji";
 import StyleContext from "../../contexts/StyleContext";

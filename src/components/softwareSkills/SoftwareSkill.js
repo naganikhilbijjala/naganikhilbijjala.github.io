@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./SoftwareSkill.scss";
 import {skillsSection} from "../../portfolio";

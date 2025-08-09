@@ -1,12 +1,16 @@
+"use client";
 import React from "react";
-import "./App.scss";
 import Main from "./containers/Main";
+import "./App.scss";
+import {StyleProvider} from "./contexts/StyleContext";
 
 function App() {
   return (
-    <div>
-      <Main />
-    </div>
+    <StyleProvider>
+      <div>
+        <Main />
+      </div>
+    </StyleProvider>
   );
 }
 
