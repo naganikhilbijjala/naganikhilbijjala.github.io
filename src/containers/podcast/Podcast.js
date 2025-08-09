@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import "./Podcast.scss";
 import {podcastSection} from "../../portfolio";
-import {Fade} from "react-reveal";
+import {motion} from "framer-motion";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Podcast() {
@@ -14,7 +14,11 @@ export default function Podcast() {
     return null;
   }
   return (
-    <Fade bottom duration={1000} distance="20px">
+    <motion.div
+      initial={{opacity: 0, y: 20}}
+      animate={{opacity: 1, y: 0}}
+      transition={{duration: 1}}
+    >
       <div className="main">
         <div className="podcast-header">
           <h1 className="podcast-header-title">{podcastSection.title}</h1>
@@ -49,6 +53,6 @@ export default function Podcast() {
           })}
         </div>
       </div>
-    </Fade>
+    </motion.div>
   );
 }

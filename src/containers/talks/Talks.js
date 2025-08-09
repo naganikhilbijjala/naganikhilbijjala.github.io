@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import "./Talks.scss";
 import TalkCard from "../../components/talkCard/TalkCard";
 import {talkSection} from "../../portfolio";
-import {Fade} from "react-reveal";
+import {motion} from "framer-motion";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Talks() {
@@ -11,7 +11,11 @@ export default function Talks() {
     return null;
   }
   return (
-    <Fade bottom duration={1000} distance="20px">
+    <motion.div
+      initial={{opacity: 0, y: 20}}
+      animate={{opacity: 1, y: 0}}
+      transition={{duration: 1}}
+    >
       <div className="main" id="talks">
         <div className="talk-header">
           <h1 className="talk-header-title">{talkSection.title}</h1>
@@ -41,6 +45,6 @@ export default function Talks() {
           })}
         </div>
       </div>
-    </Fade>
+    </motion.div>
   );
 }

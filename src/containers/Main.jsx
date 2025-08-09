@@ -21,6 +21,10 @@ import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
 const Main = () => {
+  const [isDark, setIsDark] = useLocalStorage("isDark", false);
+  const changeTheme = () => {
+    setIsDark(!isDark);
+  };
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
 
@@ -38,29 +42,29 @@ const Main = () => {
 
   return (
     <div>
-      {/* <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}> */}
-      {/* {isShowingSplashAnimation && splashScreen.enabled ? (
+      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+        {/* {isShowingSplashAnimation && splashScreen.enabled ? (
         <SplashScreen />
       ) : ( */}
-      <>
-        <Header />
-        {/* <Greeting /> */}
-        <Skills />
-        <StackProgress />
-        <Education />
-        <WorkExperience />
-        <Projects />
-        <StartupProject />
-        <Achievement />
-        <Blogs />
-        <Talks />
-        <Podcast />
-        <Profile />
-        <Footer />
-        <ScrollToTopButton />
-      </>
-      {/* )} */}
-      {/* </StyleProvider> */}
+        <>
+          <Header />
+          <Greeting />
+          <Skills />
+          <StackProgress />
+          <Education />
+          <WorkExperience />
+          <Projects />
+          <StartupProject />
+          <Achievement />
+          <Blogs />
+          <Talks />
+          <Podcast />
+          <Profile />
+          <Footer />
+          <ScrollToTopButton />
+        </>
+        {/* )} */}
+      </StyleProvider>
     </div>
   );
 };
