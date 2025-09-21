@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
 
-import TalkCard from "../../components/talkCard/TalkCard";
-import {talkSection} from "../../portfolio";
+import TalkCard from "@/components/talkCard";
+import {talkSection} from "@/portfolio";
 import {motion} from "framer-motion";
-import StyleContext from "../../contexts/StyleContext";
+import StyleContext from "@/contexts/StyleContext";
 
 export default function Talks() {
   const {isDark} = useContext(StyleContext);

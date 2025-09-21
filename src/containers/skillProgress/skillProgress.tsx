@@ -1,9 +1,9 @@
 import React from "react";
 
-import {illustration, techStack} from "../../portfolio";
+import {illustration, techStack} from "@/portfolio";
 import {motion} from "framer-motion";
-import Build from "../../assets/lottie/build.json";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
+import Build from "@/assets/lottie/build.json";
+import DisplayLottie from "@/components/displayLottie";
 
 export default function StackProgress() {
   if (techStack.viewSkillBars) {

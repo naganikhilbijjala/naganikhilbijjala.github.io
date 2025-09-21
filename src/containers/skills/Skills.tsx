@@ -1,9 +1,9 @@
 import React from "react";
-import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import {illustration, skillsSection} from "../../portfolio";
+import SoftwareSkill from "@/components/softwareSkills";
+import {illustration, skillsSection} from "@/portfolio";
 import {motion} from "framer-motion";
-import codingPerson from "../../assets/lottie/codingPerson.json";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
+import codingPerson from "@/assets/lottie/codingPerson.json";
+import DisplayLottie from "@/components/displayLottie";
 
 export default function Skills() {
   if (!skillsSection.display) {

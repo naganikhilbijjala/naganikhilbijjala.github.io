@@ -1,30 +1,32 @@
 import React from "react";
-import Header from "../components/header/Header";
-import Greeting from "./greeting/Greeting";
-import Skills from "./skills/Skills";
-import StackProgress from "./skillProgress/skillProgress";
-import WorkExperience from "./workExperience/WorkExperience";
-import Projects from "./projects/Projects";
-import SideProjects from "./sideProjects/SideProjects";
-import BlogSection from "./blog/BlogSection";
-import Footer from "../components/footer/Footer";
-import Education from "./education/Education";
-import ScrollToTopButton from "./topbutton/Top";
-import Profile from "./profile/Profile";
+import Header from "@/components/header";
+import Greeting from "@/containers/greeting/Greeting";
+import Skills from "@/containers/skills/Skills";
+import StackProgress from "@/containers/skillProgress/skillProgress";
+import WorkExperience from "@/containers/workExperience/WorkExperience";
+import Projects from "@/containers/projects/Projects";
+import SideProjects from "@/containers/sideProjects/SideProjects";
+import BlogSection from "@/containers/blog/BlogSection";
+import Footer from "@/components/footer";
+import Education from "@/containers/education/Education";
+import ScrollToTopButton from "@/containers/topbutton/Top";
+import Profile from "@/containers/profile/Profile";
 
 const Main = () => {
   return (
-    <div className="mt-0 pt-10 pb-10">
+    <div className="min-h-screen bg-background">
       <Header />
-      <Greeting />
-      <Skills />
-      <StackProgress />
-      <Education />
-      <WorkExperience />
-      <Projects />
-      <SideProjects />
-      <BlogSection />
-      <Profile />
+      <main className="pt-16">
+        <Greeting />
+        <Skills />
+        <StackProgress />
+        <Education />
+        <WorkExperience />
+        <Projects />
+        <SideProjects />
+        <BlogSection />
+        <Profile />
+      </main>
       <Footer />
       <ScrollToTopButton />
     </div>

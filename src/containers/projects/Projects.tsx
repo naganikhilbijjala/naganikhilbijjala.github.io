@@ -1,13 +1,13 @@
 import React, {useState, useEffect, Suspense, lazy} from "react";
-import Button from "../../components/button/Button";
-import {openSource, socialMediaLinks} from "../../portfolio";
-import Loading from "../../containers/loading/Loading";
-import { useStyleContext } from "../../contexts/StyleContext";
+import Button from "@/components/button";
+import {openSource, socialMediaLinks} from "@/portfolio";
+import Loading from "@/containers/loading/Loading";
+import { useStyleContext } from "@/contexts/StyleContext";
 
 export default function Projects() {
   const { isDark } = useStyleContext();
   const GithubRepoCard = lazy(() =>
-    import("../../components/githubRepoCard/GithubRepoCard")
+    import("@/components/githubRepoCard")
   );
   const FailedLoading = () => null;
   const renderLoader = () => <Loading />;

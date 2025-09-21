@@ -1,8 +1,8 @@
 import React from "react";
-import ExperienceCard from "../../components/experienceCard/ExperienceCard";
-import {workExperiences} from "../../portfolio";
+import ExperienceCard from "@/components/experienceCard";
+import {workExperiences} from "@/portfolio";
 import {motion} from "framer-motion";
-import { useStyleContext } from "../../contexts/StyleContext";
+import { useStyleContext } from "@/contexts/StyleContext";
 
 export default function WorkExperience() {
   const { isDark } = useStyleContext();

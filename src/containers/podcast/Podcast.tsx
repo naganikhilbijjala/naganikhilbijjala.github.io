@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
 
-import {podcastSection} from "../../portfolio";
+import {podcastSection} from "@/portfolio";
 import {motion} from "framer-motion";
-import StyleContext from "../../contexts/StyleContext";
+import StyleContext from "@/contexts/StyleContext";
 
 export default function Podcast() {
   const {isDark} = useContext(StyleContext);

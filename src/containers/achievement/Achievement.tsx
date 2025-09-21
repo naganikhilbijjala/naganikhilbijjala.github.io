@@ -1,8 +1,8 @@
 import React from "react";
-import AchievementCard from "../../components/achievementCard/AchievementCard";
-import {achievementSection} from "../../portfolio";
+import AchievementCard from "@/components/achievementCard";
+import {achievementSection} from "@/portfolio";
 import {motion} from "framer-motion";
-import { useStyleContext } from "../../contexts/StyleContext";
+import { useStyleContext } from "@/contexts/StyleContext";
 
 export default function Achievement() {
   const { isDark } = useStyleContext();

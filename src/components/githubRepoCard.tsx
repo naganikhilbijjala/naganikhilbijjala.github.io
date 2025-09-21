@@ -2,7 +2,7 @@
 import React from "react";
 
 import {motion} from "framer-motion";
-import {formatFileSizeDisplay} from "../../utils";
+import {formatFileSizeDisplay} from "@/utils";
 
 interface GithubRepoCardProps {
   repo: any;

@@ -1,7 +1,7 @@
 import React from "react";
 
-import EducationCard from "../../components/educationCard/EducationCard";
-import {educationInfo} from "../../portfolio";
+import EducationCard from "@/components/educationCard";
+import {educationInfo} from "@/portfolio";
 
 export default function Education() {
   if (educationInfo.display) {

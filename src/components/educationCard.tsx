@@ -1,7 +1,7 @@
 "use client";
 import React, {createRef} from "react";
 import { motion } from "framer-motion";
-import { School } from "../../portfolio";
+import { School } from "@/portfolio";
 
 interface EducationCardProps {
   school: School;

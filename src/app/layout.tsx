@@ -1,6 +1,6 @@
 import React from "react";
-import "../index.css";
-import { StyleProvider } from "../contexts/StyleContext";
+import "@/index.css";
+import { StyleProvider } from "@/contexts/StyleContext";
 
 export const metadata = {
   title: "Developer Portfolio",

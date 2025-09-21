@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import {contactInfo, isHireable} from "../../portfolio";
+import SocialMedia from "@/components/socialMedia";
+import {contactInfo, isHireable} from "@/portfolio";
 import {motion} from "framer-motion";
 
 export default function GithubProfileCard({prof}) {

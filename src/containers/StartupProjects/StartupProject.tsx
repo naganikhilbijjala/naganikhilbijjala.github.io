@@ -1,6 +1,6 @@
 import React from "react";
 
-import {bigProjects} from "../../portfolio";
+import {bigProjects} from "@/portfolio";
 import {motion} from "framer-motion";
 
 export default function StartupProject() {

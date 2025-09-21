@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useContext} from "react";
 
-import BlogCard from "../../components/blogCard/BlogCard";
-import {blogSection} from "../../portfolio";
+import BlogCard from "@/components/blogCard";
+import {blogSection} from "@/portfolio";
 import {motion} from "framer-motion";
-import StyleContext from "../../contexts/StyleContext";
+import StyleContext from "@/contexts/StyleContext";
 export default function Blogs() {
   const {isDark} = useContext(StyleContext);
   const [mediumBlogs, setMediumBlogs] = useState<any[]>([]);

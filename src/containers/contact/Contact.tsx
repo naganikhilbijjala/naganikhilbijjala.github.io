@@ -1,7 +1,7 @@
 import React from "react";
 
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import {contactInfo} from "../../portfolio";
+import SocialMedia from "@/components/socialMedia";
+import {contactInfo} from "@/portfolio";
 import {motion} from "framer-motion";
 
 export default function Contact() {

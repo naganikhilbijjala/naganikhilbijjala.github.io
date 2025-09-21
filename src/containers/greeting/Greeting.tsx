@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
+import SocialMedia from "@/components/socialMedia";
+import Button from "@/components/button";
 
-import {greeting} from "../../portfolio";
+import {greeting} from "@/portfolio";
 
 export default function Greeting() {
   if (!greeting.displayGreeting) {

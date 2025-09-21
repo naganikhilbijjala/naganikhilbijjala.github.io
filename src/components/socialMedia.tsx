@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import {socialMediaLinks} from "../../portfolio";
+import {socialMediaLinks} from "@/portfolio";
 
 export default function socialMedia() {
   if (!socialMediaLinks.display) {
