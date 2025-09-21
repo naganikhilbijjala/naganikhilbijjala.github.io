@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(powershell:*)",
+      "Bash(while read file)",
+      "Bash(do mv \"$file\" \"$file%.js.tsx\")",
+      "Bash(done)",
+      "Bash(mv:*)",
+      "Bash(grep:*)",
+      "Bash(npm run build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

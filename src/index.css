@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Agustina Regular";
   font-style: normal;
@@ -25,6 +29,23 @@ body {
   font: 19px / 23px Montserrat, "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+/* Global heading resets for consistent spacing */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+/* Ensure sections don't have excessive top margins */
+.main {
+  margin-top: 0 !important;
 }
 /* Media Query */
 @media (max-width: 1380px) {
