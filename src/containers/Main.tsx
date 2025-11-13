@@ -2,11 +2,9 @@ import React from "react";
 import Header from "@/components/header";
 import Greeting from "@/containers/greeting/Greeting";
 import Skills from "@/containers/skills/Skills";
-import StackProgress from "@/containers/skillProgress/skillProgress";
 import WorkExperience from "@/containers/workExperience/WorkExperience";
 import Projects from "@/containers/projects/Projects";
 import SideProjects from "@/containers/sideProjects/SideProjects";
-import BlogSection from "@/containers/blog/BlogSection";
 import Education from "@/containers/education/Education";
 import ScrollToTopButton from "@/containers/topbutton/Top";
 import Profile from "@/containers/profile/Profile";
@@ -14,15 +12,15 @@ import { motion } from "framer-motion";
 
 const Main = () => {
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      {/* Animated gradient background */}
+    <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+      {/* Professional subtle background pattern */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/20" />
-        <div className="absolute inset-0">
-          <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" />
-          <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000" />
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000" />
-        </div>
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+        {/* Subtle gradient orbs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-950/20 dark:to-purple-950/20 rounded-full blur-3xl opacity-30" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-indigo-100 to-cyan-100 dark:from-indigo-950/20 dark:to-cyan-950/20 rounded-full blur-3xl opacity-30" />
       </div>
 
       <Header />
@@ -42,15 +40,6 @@ const Main = () => {
           transition={{ duration: 0.5 }}
         >
           <Skills />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-        >
-          <StackProgress />
         </motion.div>
 
         <motion.div
@@ -87,15 +76,6 @@ const Main = () => {
           transition={{ duration: 0.5 }}
         >
           <SideProjects />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-        >
-          <BlogSection />
         </motion.div>
 
         <motion.div

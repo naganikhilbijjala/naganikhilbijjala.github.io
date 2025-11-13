@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "slug": "building-scalable-microservices",
+    "title": "Building Scalable Microservices with Spring Boot",
+    "excerpt": "Learn how to design and implement scalable microservices architecture using Spring Boot and best practices.",
+    "category": "Backend",
+    "date": "2024-01-15",
+    "readTime": "8 min read",
+    "author": "Naga Nikhil Bijjala",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    "content": "# Building Scalable Microservices with Spring Boot\n\nMicroservices architecture has become the de facto standard for building large-scale applications. In this comprehensive guide, we'll explore how to build scalable microservices using Spring Boot.\n\n## Why Microservices?\n\nMicroservices offer several advantages:\n\n- **Scalability**: Scale individual services based on demand\n- **Flexibility**: Use different technologies for different services\n- **Resilience**: Failures are isolated to individual services\n- **Faster Development**: Teams can work independently\n\n## Getting Started\n\nFirst, let's set up a basic Spring Boot microservice:\n\n```java\n@SpringBootApplication\n@EnableDiscoveryClient\npublic class UserServiceApplication {\n    public static void main(String[] args) {\n        SpringApplication.run(UserServiceApplication.class, args);\n    }\n}\n```\n\n## Best Practices\n\n1. **Use API Gateway**: Implement an API Gateway to handle routing\n2. **Service Discovery**: Use tools like Eureka or Consul\n3. **Circuit Breakers**: Implement circuit breakers using Resilience4j\n4. **Distributed Tracing**: Use Spring Cloud Sleuth for tracing\n\n## Conclusion\n\nBuilding microservices requires careful planning and adherence to best practices. Spring Boot provides excellent tools to make this journey easier."
+  },
+  {
+    "id": "2",
+    "slug": "aws-best-practices",
+    "title": "AWS Best Practices for Cloud-Native Applications",
+    "excerpt": "Explore essential AWS services and patterns for building resilient cloud-native applications.",
+    "category": "Cloud",
+    "date": "2023-12-20",
+    "readTime": "10 min read",
+    "author": "Naga Nikhil Bijjala",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    "content": "# AWS Best Practices for Cloud-Native Applications\n\nBuilding cloud-native applications on AWS requires understanding of various services and architectural patterns. Let's dive into the best practices.\n\n## Core AWS Services\n\n### EC2 and Auto Scaling\n\nAmazon EC2 provides scalable computing capacity. Combined with Auto Scaling, you can:\n\n- Automatically adjust capacity based on demand\n- Maintain application availability\n- Optimize costs\n\n### S3 for Storage\n\nAmazon S3 is the backbone of cloud storage:\n\n```python\nimport boto3\n\ns3 = boto3.client('s3')\ns3.upload_file('local-file.txt', 'my-bucket', 'remote-file.txt')\n```\n\n## Architecture Patterns\n\n### Serverless with Lambda\n\nAWS Lambda allows you to run code without provisioning servers:\n\n```javascript\nexports.handler = async (event) => {\n    const response = {\n        statusCode: 200,\n        body: JSON.stringify('Hello from Lambda!'),\n    };\n    return response;\n};\n```\n\n### High Availability\n\n- Deploy across multiple Availability Zones\n- Use Elastic Load Balancing\n- Implement health checks\n\n## Security Best Practices\n\n1. Use IAM roles instead of access keys\n2. Enable MFA for root account\n3. Use Security Groups and NACLs\n4. Encrypt data at rest and in transit\n\n## Conclusion\n\nAWS provides a comprehensive set of tools for building cloud-native applications. Following these best practices will help you build secure, scalable, and resilient systems."
+  },
+  {
+    "id": "3",
+    "slug": "optimizing-database-performance",
+    "title": "Optimizing Database Performance in Production",
+    "excerpt": "Tips and techniques for improving database query performance and reducing latency in production systems.",
+    "category": "Database",
+    "date": "2023-11-10",
+    "readTime": "6 min read",
+    "author": "Naga Nikhil Bijjala",
+    "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80",
+    "content": "# Optimizing Database Performance in Production\n\nDatabase performance is crucial for application success. Let's explore proven techniques to optimize your database.\n\n## Understanding Query Performance\n\n### Use EXPLAIN\n\nAlways analyze your queries using EXPLAIN:\n\n```sql\nEXPLAIN ANALYZE\nSELECT * FROM users WHERE email = 'user@example.com';\n```\n\n## Indexing Strategies\n\n### Single Column Indexes\n\n```sql\nCREATE INDEX idx_users_email ON users(email);\n```\n\n### Composite Indexes\n\nFor queries with multiple WHERE conditions:\n\n```sql\nCREATE INDEX idx_orders_user_date ON orders(user_id, created_at);\n```\n\n## Query Optimization\n\n### Avoid SELECT *\n\nOnly select the columns you need:\n\n```sql\n-- Bad\nSELECT * FROM users;\n\n-- Good\nSELECT id, name, email FROM users;\n```\n\n### Use JOINs Efficiently\n\n```sql\nSELECT u.name, o.total\nFROM users u\nINNER JOIN orders o ON u.id = o.user_id\nWHERE o.status = 'completed';\n```\n\n## Connection Pooling\n\nImplement connection pooling to reduce overhead:\n\n```java\nHikariConfig config = new HikariConfig();\nconfig.setJdbcUrl(\"jdbc:postgresql://localhost:5432/mydb\");\nconfig.setMaximumPoolSize(20);\nHikariDataSource dataSource = new HikariDataSource(config);\n```\n\n## Caching Strategies\n\n1. **Application-level caching**: Use Redis or Memcached\n2. **Query result caching**: Cache frequently accessed data\n3. **Database query cache**: Enable MySQL query cache\n\n## Monitoring and Profiling\n\n- Use tools like New Relic or DataDog\n- Monitor slow query logs\n- Set up alerts for performance degradation\n\n## Conclusion\n\nDatabase optimization is an ongoing process. Regular monitoring and proactive optimization will ensure your application performs well under load."
+  }
+]

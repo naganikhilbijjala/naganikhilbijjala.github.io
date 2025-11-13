@@ -191,7 +191,8 @@ const illustration: Illustration = {
 const greeting: Greeting = {
   username: "Naga Nikhil Bijjala",
   title: "Naga Nikhil Bijjala",
-  subTitle: "Software Engineer specializing in backend development with expertise in building scalable REST APIs, microservices architecture, and cloud-native applications using Java, Spring Boot, and AWS.",
+  subTitle:
+    "Software Engineer specializing in backend development with expertise in building scalable REST APIs, microservices architecture, and cloud-native applications using Java, Spring Boot, and AWS.",
   resumeLink:
     "https://drive.google.com/file/d/1lKx0x4DW703pRtErj6XmkBLadEuSMnrg/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -212,7 +213,8 @@ const socialMediaLinks: SocialMediaLinks = {
 
 const skillsSection: SkillsSection = {
   title: "Technical Expertise",
-  subTitle: "Full-stack developer with focus on backend systems and cloud architecture",
+  subTitle:
+    "Full-stack developer with focus on backend systems and cloud architecture",
   skills: [
     "Design and implement scalable microservices and RESTful APIs",
     "Build cloud-native applications with AWS services and containerization",
@@ -276,7 +278,7 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-docker"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Education Section
@@ -286,20 +288,20 @@ const educationInfo: EducationInfo = {
   schools: [
     {
       schoolName: "University of North Carolina at Charlotte",
-      logo: require("./assets/images/unccLogo.png"),
+      logo: "/images/unccLogo.png",
       subHeader: "Master of Science in Computer Science",
-      duration: "August 2022 - December 2023",
+      duration: "August 2022 - December 2023"
       // desc: "Participated in the research of XXX and published 3 papers.",
       // descBullets: [
-        // "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        // "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      // "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      // "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
       // ]
     },
     {
-      schoolName: "Guru Nanak Institutions Technical Campus",
-      logo: require("./assets/images/gniLogo.jpg"),
+      schoolName: "Jawaharlal Nehru Technological University",
+      logo: "/images/jntuLogo.png",
       subHeader: "Bachelor of Technology in Computer Science",
-      duration: "September 2013 - April 2017",
+      duration: "September 2017 - April 2021"
       // desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
       // descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
     }
@@ -335,7 +337,7 @@ const workExperiences: WorkExperiences = {
     {
       role: "Software Development Engineer",
       company: "Juspay",
-      companylogo: require("./assets/images/juspayLogo.jpeg"),
+      companylogo: "/images/juspayLogo.jpeg",
       date: "June 2021 – July 2022",
       // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       descBullets: [
@@ -348,7 +350,7 @@ const workExperiences: WorkExperiences = {
     {
       role: "Software Development Engineer Intern",
       company: "Juspay",
-      companylogo: require("./assets/images/juspayLogo.jpeg"),
+      companylogo: "/images/juspayLogo.jpeg",
       date: "December 2020 – June 2021",
       // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       descBullets: [
@@ -357,11 +359,11 @@ const workExperiences: WorkExperiences = {
         "Designed and implemented a relational data model to store merchant and customer data.",
         "Automated repetitive testing processes using Selenium and JUnit, increasing testing efficiency by 20% and enabling faster release cycles."
       ]
-    },
+    }
     // {
     //   role: "Software Engineer Intern",
     //   company: "Airbnb",
-    //   companylogo: require("./assets/images/airbnbLogo.png"),
+    //   companylogo: "/images/airbnbLogo.png",
     //   date: "Jan 2015 – Sep 2015",
     //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     // }
@@ -383,7 +385,7 @@ const bigProjects: BigProjects = {
   // subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
+      image: "/images/saayaHealthLogo.webp",
       projectName: "Saayahealth",
       projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       footerLink: [
@@ -395,74 +397,13 @@ const bigProjects: BigProjects = {
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
+      image: "/images/nextuLogo.webp",
       projectName: "Nextu",
       projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       footerLink: [
         {
           name: "Visit Website",
           url: "http://nextu.se/"
-        }
-      ]
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
-};
-
-// Achievement Section
-// Include certificates, talks etc
-
-const achievementSection: AchievementSection = {
-  title: "Achievements And Certifications",
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
-
-  achievementsCards: [
-    {
-      title: "Google Code-In Finalist",
-      subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
-        },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
-        }
-      ]
-    },
-    {
-      title: "Google Assistant Action",
-      subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
-      footerLink: [
-        {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
-        }
-      ]
-    },
-
-    {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
-      footerLink: [
-        {name: "Certification", url: ""},
-        {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
         }
       ]
     }
@@ -552,7 +493,6 @@ export {
   workExperiences,
   openSource,
   bigProjects,
-  achievementSection,
   blogSection,
   talkSection,
   podcastSection,

@@ -64,7 +64,7 @@ export default function Contact() {
                 <motion.div whileHover={{x: 5}} className="group">
                   <a
                     href={`tel:${contactInfo.number}`}
-                    className="flex items-center gap-4 text-gray-700 dark:text-gray-300 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300"
+                    className="flex items-center gap-4 text-gray-700 dark:text-gray-100 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300"
                   >
                     <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full text-white group-hover:scale-110 transition-transform duration-300">
                       <FaPhone className="text-lg" />
@@ -85,7 +85,7 @@ export default function Contact() {
               <motion.div whileHover={{x: 5}} className="group">
                 <a
                   href={`mailto:${contactInfo.email_address}`}
-                  className="flex items-center gap-4 text-gray-700 dark:text-gray-300 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300"
+                  className="flex items-center gap-4 text-gray-700 dark:text-gray-100 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300"
                 >
                   <div className="p-3 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full text-white group-hover:scale-110 transition-transform duration-300">
                     <FaEnvelope className="text-lg" />

@@ -4,7 +4,11 @@ import {StyleProvider} from "@/contexts/StyleContext";
 
 export const metadata = {
   title: "Naga Nikhil Bijjala",
-  description: "A beautiful portfolio template for developers"
+  description: "A beautiful portfolio template for developers",
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  }
 };
 
 interface RootLayoutProps {

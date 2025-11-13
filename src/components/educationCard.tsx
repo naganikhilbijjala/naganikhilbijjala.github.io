@@ -1,6 +1,7 @@
 "use client";
-import React, {createRef} from "react";
+import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { School } from "@/portfolio";
 
 interface EducationCardProps {
@@ -12,8 +13,6 @@ interface GetDescBulletsProps {
 }
 
 export default function EducationCard({school}: EducationCardProps) {
-  const imgRef = createRef<HTMLImageElement>();
-
   const GetDescBullets = ({descBullets}: GetDescBulletsProps) => {
     return descBullets
       ? descBullets.map((item, i) => (
@@ -49,14 +48,15 @@ export default function EducationCard({school}: EducationCardProps) {
             transition={{ type: "spring", stiffness: 300 }}
             className="flex-shrink-0"
           >
-            <div className="relative">
+            <div className="relative w-24 h-24 max-xl:w-20 max-xl:h-20 max-md:w-16 max-md:h-16">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-              <img
-                crossOrigin={"anonymous"}
-                ref={imgRef}
-                className="relative object-cover w-24 h-24 rounded-full shadow-xl border-4 border-white dark:border-gray-700 max-xl:w-20 max-xl:h-20 max-md:w-16 max-md:h-16"
+              <Image
                 src={school.logo}
                 alt={school.schoolName}
+                width={96}
+                height={96}
+                className="relative object-cover w-full h-full rounded-full shadow-xl border-4 border-white dark:border-gray-700"
+                unoptimized
               />
             </div>
           </motion.div>

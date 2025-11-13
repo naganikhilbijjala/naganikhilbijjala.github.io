@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Calendar, Briefcase } from "lucide-react";
+import Image from "next/image";
 
 interface ExperienceCardProps {
   cardInfo: {
@@ -13,73 +12,102 @@ interface ExperienceCardProps {
     role: string;
     descBullets: string[];
   };
-  isDark: boolean;
 }
 
-export default function ExperienceCard({cardInfo, isDark}: ExperienceCardProps) {
+interface GetDescBulletsProps {
+  descBullets?: string[];
+}
+
+export default function ExperienceCard({cardInfo}: ExperienceCardProps) {
+  const GetDescBullets = ({descBullets}: GetDescBulletsProps) => {
+    return descBullets
+      ? descBullets.map((item, i) => (
+          <motion.li
+            key={i}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="relative pl-6 text-gray-600 dark:text-gray-400 mb-2 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-gradient-to-r before:from-blue-500 before:to-cyan-500 before:rounded-full"
+          >
+            {item}
+          </motion.li>
+        ))
+      : null;
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="h-full"
+      className="group relative p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+      whileHover={{ y: -5 }}
     >
-      <Card className="h-full hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-        {/* Company Header with Background */}
-        <div className="relative h-44 bg-gradient-to-br from-primary/90 to-primary/70">
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="relative h-full flex items-center justify-center">
-            <h3 className="text-white text-2xl font-bold text-center px-6 drop-shadow-lg">
-              {cardInfo.company}
-            </h3>
-          </div>
+      {/* Gradient border effect on hover */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
 
-          {/* Company Logo */}
-          <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2">
-            <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-background shadow-xl">
-              <img
-                className="w-full h-full object-cover"
+      <div className="relative flex flex-row gap-6 items-start max-xl:flex-col max-xl:items-center max-md:text-center">
+        {cardInfo.companylogo && (
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="flex-shrink-0"
+          >
+            <div className="relative w-24 h-24 max-xl:w-20 max-xl:h-20 max-md:w-16 max-md:h-16">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+              <Image
                 src={cardInfo.companylogo}
                 alt={cardInfo.company}
+                width={96}
+                height={96}
+                className="relative object-cover w-full h-full rounded-full shadow-xl border-4 border-white dark:border-gray-700"
+                unoptimized
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        )}
 
-        {/* Card Content */}
-        <CardHeader className="pt-20 pb-4">
-          <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
-            <Briefcase className="h-5 w-5" />
-            {cardInfo.role}
-          </CardTitle>
-          <CardDescription className="text-center flex items-center justify-center gap-2 mt-2">
-            <Calendar className="h-4 w-4" />
-            {cardInfo.date}
-          </CardDescription>
-        </CardHeader>
+        <div className="flex-1 space-y-3">
+          <motion.h5
+            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent max-xl:text-xl"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            {cardInfo.company}
+          </motion.h5>
 
-        <CardContent className="pb-6">
-          {cardInfo.desc && (
-            <p className="text-muted-foreground text-center mb-4">
+          <div className="space-y-2">
+            <h6 className="text-lg font-semibold text-gray-800 dark:text-gray-200 max-xl:text-base">
+              {cardInfo.role}
+            </h6>
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2 max-md:justify-center">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              {cardInfo.date}
+            </p>
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
               {cardInfo.desc}
             </p>
-          )}
 
-          {cardInfo.descBullets && cardInfo.descBullets.length > 0 && (
-            <ul className="space-y-2">
-              {cardInfo.descBullets.map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2 text-sm text-muted-foreground"
-                >
-                  <span className="text-primary mt-1">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-        </CardContent>
-      </Card>
+            {cardInfo.descBullets && cardInfo.descBullets.length > 0 && (
+              <ul className="mt-4 space-y-2">
+                <GetDescBullets descBullets={cardInfo.descBullets} />
+              </ul>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Decorative gradient line at bottom */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-b-2xl"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        style={{ transformOrigin: "left" }}
+      />
     </motion.div>
   );
 }
