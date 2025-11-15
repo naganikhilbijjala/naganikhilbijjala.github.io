@@ -94,7 +94,7 @@ export default function Contact() {
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       Email
                     </p>
-                    <p className="text-lg font-semibold break-all">
+                    <p className="text-lg font-semibold break-all text-gray-900 dark:text-white">
                       {contactInfo.email_address}
                     </p>
                   </div>
