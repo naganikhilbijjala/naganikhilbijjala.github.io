@@ -49,15 +49,17 @@ export default function EducationCard({school}: EducationCardProps) {
             className="flex-shrink-0"
           >
             <div className="relative w-24 h-24 max-xl:w-20 max-xl:h-20 max-md:w-16 max-md:h-16">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
-              <Image
-                src={school.logo}
-                alt={school.schoolName}
-                width={96}
-                height={96}
-                className="relative object-cover w-full h-full rounded-full shadow-xl border-4 border-white dark:border-gray-700"
-                unoptimized
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-600 p-3 flex items-center justify-center">
+                <Image
+                  src={school.logo}
+                  alt={school.schoolName}
+                  width={96}
+                  height={96}
+                  className="object-contain w-full h-full"
+                  unoptimized
+                />
+              </div>
             </div>
           </motion.div>
         )}

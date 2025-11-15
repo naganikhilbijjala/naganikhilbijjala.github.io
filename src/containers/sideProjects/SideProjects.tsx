@@ -6,12 +6,12 @@ import {FaGithub, FaExternalLinkAlt} from "react-icons/fa";
 export default function SideProjects() {
   const projects = [
     {
-      name: "Project Name 1",
+      name: "BioCraft - Bio Data Builder",
       description:
-        "Brief description of your project and the technologies used.",
-      techStack: ["React", "Node.js", "MongoDB"],
-      githubLink: "https://github.com/yourusername/project1",
-      liveLink: "https://project1.com"
+        "A modern web application for creating professional bio data PDFs for marriage proposals with customizable templates and instant PDF generation.",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      githubLink: "https://github.com/naganikhilbijjala/bio-data-builder",
+      liveLink: "https://bio-data-builder.vercel.app/"
     },
     {
       name: "Project Name 2",

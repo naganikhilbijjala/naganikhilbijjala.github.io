@@ -301,7 +301,7 @@ const educationInfo: EducationInfo = {
       schoolName: "Jawaharlal Nehru Technological University",
       logo: "/images/jntuLogo.png",
       subHeader: "Bachelor of Technology in Computer Science",
-      duration: "September 2017 - April 2021"
+      duration: "July 2017 - May 2021"
       // desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
       // descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
     }
@@ -334,6 +334,34 @@ const techStack: TechStack = {
 const workExperiences: WorkExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
+    {
+      role: "Software Engineer II",
+      company: "Smart Structures",
+      companylogo: "/images/smartStructuresLogo.png",
+      date: "May 2024 - Present",
+      descBullets: [
+        "Developed and maintained responsive web applications using React JS, applying modern TypeScript features and  utilizing React Hooks, Context API, and Zustand for efficient state management and component logic.",
+        "Enhanced application performance by optimizing server-side rendering (SSR) and client-side hydration in Next.js,  resulting in a 50% reduction in initial load times and improving overall SEO and user experience.",
+        "Utilized Node.js framework and libraries, including Express, TypeORM, Moment, and Plotly for processing sensor data  and showing in dashboards.",
+        "Integrated LLMs into a full-stack chat application using LangChain, LangGraph, and RAG (Retrieval-Augmented Generation), enabling contextual and document-aware conversations by leveraging vector stores, embeddings, and  custom agents.",
+        "Utilized Material-UI to design and implement visually appealing and consistent UI components, improving user  engagement by 25%.",
+        "Built a consistent and scalable UI by creating reusable functional components and shared design patterns, significantly reducing duplicate code and improving development speed and maintainability across the application.",
+        "Conducted regular code reviews, maintaining strict coding standards, and reducing bugs by 30%"
+      ]
+    },
+    {
+      role: "Application Developer",
+      company: "University of North Carolina at Charlotte (ONE IT)",
+      companylogo: "/images/unccLogo.png",
+      date: "Jan 2023 - Dec 2023",
+      descBullets: [
+        "Integrated React Query for data fetching, caching, and synchronization, reducing data loading times by 40% and improving application performance.",
+        "Developed high-performance RESTful APIs using Node.js and Express, leveraging TypeORM with PostgreSQL for efficient database management, resulting in a 25% improvement in query performance and seamless CRUD operations.",
+        "Integrated SurveyJS forms into React applications to dynamically generate and manage forms, increasing form generation efficiency by 40%.",
+        "Added unit and integration tests using Jest and React Testing Library, improving code reliability and catching 40% more bugs during development, leading to faster QA cycles and more stable releases.",
+        "Incorporated accessibility standards (WCAG) into React components to ensure inclusive user experiences across devices."
+      ]
+    },
     {
       role: "Software Development Engineer",
       company: "Juspay",
@@ -385,15 +413,18 @@ const bigProjects: BigProjects = {
   // subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: "/images/saayaHealthLogo.webp",
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: "/images/bioDataBuilderLogo.png",
+      projectName: "BioCraft - Bio Data Builder",
+      projectDesc: "A modern web application for creating professional bio data PDFs for marriage proposals. Features customizable templates, instant PDF generation, and secure data handling. Built with Next.js, TypeScript, and Tailwind CSS.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "http://saayahealth.com/"
+          url: "https://bio-data-builder.vercel.app/"
+        },
+        {
+          name: "View on GitHub",
+          url: "https://github.com/naganikhilbijjala/bio-data-builder"
         }
-        //  you can add extra buttons here.
       ]
     },
     {
