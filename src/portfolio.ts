@@ -192,7 +192,7 @@ const greeting: Greeting = {
   username: "Naga Nikhil Bijjala",
   title: "Naga Nikhil Bijjala",
   subTitle:
-    "Software Engineer specializing in backend development with expertise in building scalable REST APIs, microservices architecture, and cloud-native applications using Java, Spring Boot, and AWS.",
+    "Full Stack Developer with expertise in Next.js, React, NestJS, TypeScript, Node.js, Java, Spring Boot, and cloud-native applications on AWS.",
   resumeLink:
     "https://drive.google.com/file/d/1lKx0x4DW703pRtErj6XmkBLadEuSMnrg/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
@@ -415,7 +415,8 @@ const bigProjects: BigProjects = {
     {
       image: "/images/bioDataBuilderLogo.png",
       projectName: "BioCraft - Bio Data Builder",
-      projectDesc: "A modern web application for creating professional bio data PDFs for marriage proposals. Features customizable templates, instant PDF generation, and secure data handling. Built with Next.js, TypeScript, and Tailwind CSS.",
+      projectDesc:
+        "A modern web application for creating professional bio data PDFs for marriage proposals. Features customizable templates, instant PDF generation, and secure data handling. Built with Next.js, TypeScript, and Tailwind CSS.",
       footerLink: [
         {
           name: "Visit Website",

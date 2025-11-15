@@ -4,10 +4,11 @@ import {StyleProvider} from "@/contexts/StyleContext";
 
 export const metadata = {
   title: "Naga Nikhil Bijjala",
-  description: "A beautiful portfolio template for developers",
+  description:
+    "Software Engineer specializing in full-stack development with expertise in React, Next.js, Node.js, Spring Boot, and cloud technologies.",
   icons: {
-    icon: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: "/favicon.svg",
+    apple: "/favicon.svg"
   }
 };
 

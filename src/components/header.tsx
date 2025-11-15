@@ -3,10 +3,7 @@ import React, { useState } from "react";
 import {
   greeting,
   workExperiences,
-  skillsSection,
-  openSource,
-  blogSection,
-  talkSection
+  skillsSection
 } from "@/portfolio";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -16,15 +13,11 @@ import Link from "next/link";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const viewExperience = workExperiences.display;
-  const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
-  const viewBlog = blogSection.display;
-  const viewTalks = talkSection.display;
 
   const navItems = [
     { show: viewSkills, href: "#skills", label: "Skills" },
     { show: viewExperience, href: "#experience", label: "Experience" },
-    { show: viewOpenSource, href: "#opensource", label: "Projects" },
     { show: true, href: "#sideprojects", label: "Side Projects" },
     { show: true, href: "/blogs", label: "Blog" },
     { show: true, href: "#contact", label: "Contact" },

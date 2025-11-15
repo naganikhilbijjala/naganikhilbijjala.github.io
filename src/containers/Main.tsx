@@ -3,12 +3,11 @@ import Header from "@/components/header";
 import Greeting from "@/containers/greeting/Greeting";
 import Skills from "@/containers/skills/Skills";
 import WorkExperience from "@/containers/workExperience/WorkExperience";
-import Projects from "@/containers/projects/Projects";
 import SideProjects from "@/containers/sideProjects/SideProjects";
 import Education from "@/containers/education/Education";
 import ScrollToTopButton from "@/containers/topbutton/Top";
-import Profile from "@/containers/profile/Profile";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
+import Profile from "./profile/Profile";
 
 const Main = () => {
   return (
@@ -26,63 +25,54 @@ const Main = () => {
       <Header />
       <main className="relative pt-16">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{duration: 0.5}}
         >
           <Greeting />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: true, margin: "-100px"}}
+          transition={{duration: 0.5}}
         >
           <Skills />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: true, margin: "-100px"}}
+          transition={{duration: 0.5}}
         >
           <Education />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: true, margin: "-100px"}}
+          transition={{duration: 0.5}}
         >
           <WorkExperience />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-        >
-          <Projects />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: true, margin: "-100px"}}
+          transition={{duration: 0.5}}
         >
           <SideProjects />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: true, margin: "-100px"}}
+          transition={{duration: 0.5}}
         >
           <Profile />
         </motion.div>
