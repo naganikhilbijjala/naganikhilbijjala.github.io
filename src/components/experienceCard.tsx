@@ -24,11 +24,11 @@ export default function ExperienceCard({cardInfo}: ExperienceCardProps) {
       ? descBullets.map((item, i) => (
           <motion.li
             key={i}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -10 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="relative pl-6 text-gray-600 dark:text-gray-400 mb-2 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-gradient-to-r before:from-blue-500 before:to-cyan-500 before:rounded-full"
+            transition={{ duration: 0.4, delay: i * 0.06 }}
+            className="relative pl-5 text-slate-600 dark:text-slate-400 mb-2 text-sm leading-relaxed before:content-[''] before:absolute before:left-0 before:top-[9px] before:w-1.5 before:h-1.5 before:bg-emerald-500 before:rounded-full"
           >
             {item}
           </motion.li>
@@ -38,22 +38,19 @@ export default function ExperienceCard({cardInfo}: ExperienceCardProps) {
 
   return (
     <motion.div
-      className="group relative p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
-      whileHover={{ y: -5 }}
+      className="group relative p-6 bg-white/70 dark:bg-white/[0.04] rounded-2xl border border-slate-200/60 dark:border-white/[0.06] hover:border-emerald-300/50 dark:hover:border-emerald-500/20 backdrop-blur-sm transition-all duration-500 hover:shadow-lg hover:shadow-emerald-500/[0.04]"
+      whileHover={{ y: -4 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
     >
-      {/* Gradient border effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-
       <div className="relative flex flex-row gap-6 items-start max-xl:flex-col max-xl:items-center max-md:text-center">
         {cardInfo.companylogo && (
           <motion.div
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400 }}
             className="flex-shrink-0"
           >
-            <div className="relative w-24 h-24 max-xl:w-20 max-xl:h-20 max-md:w-16 max-md:h-16">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-600 p-3 flex items-center justify-center">
+            <div className="relative w-20 h-20 max-md:w-16 max-md:h-16">
+              <div className="relative w-full h-full bg-white dark:bg-slate-800 rounded-xl border border-slate-200/80 dark:border-white/10 p-2.5 flex items-center justify-center shadow-sm">
                 <Image
                   src={cardInfo.companylogo}
                   alt={cardInfo.company}
@@ -67,49 +64,34 @@ export default function ExperienceCard({cardInfo}: ExperienceCardProps) {
           </motion.div>
         )}
 
-        <div className="flex-1 space-y-3">
-          <motion.h5
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent max-xl:text-xl"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            {cardInfo.company}
-          </motion.h5>
+        <div className="flex-1 space-y-2">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+            <h5 className="text-xl font-bold text-foreground max-xl:text-lg">
+              {cardInfo.company}
+            </h5>
+            <span className="text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-200/50 dark:border-emerald-500/20 whitespace-nowrap w-fit max-md:mx-auto">
+              {cardInfo.date}
+            </span>
+          </div>
 
-          <div className="space-y-2">
-            <h6 className="text-lg font-semibold text-gray-800 dark:text-gray-200 max-xl:text-base">
+          <div className="space-y-1.5">
+            <h6 className="text-base font-semibold text-slate-700 dark:text-slate-300">
               {cardInfo.role}
             </h6>
-            <p className="text-sm font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2 max-md:justify-center">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              {cardInfo.date}
-            </p>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              {cardInfo.desc}
-            </p>
+            {cardInfo.desc && (
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                {cardInfo.desc}
+              </p>
+            )}
 
             {cardInfo.descBullets && cardInfo.descBullets.length > 0 && (
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-3 space-y-1.5">
                 <GetDescBullets descBullets={cardInfo.descBullets} />
               </ul>
             )}
           </div>
         </div>
       </div>
-
-      {/* Decorative gradient line at bottom */}
-      <motion.div
-        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-b-2xl"
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        style={{ transformOrigin: "left" }}
-      />
     </motion.div>
   );
 }

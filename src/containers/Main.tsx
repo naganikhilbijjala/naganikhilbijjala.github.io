@@ -11,19 +11,18 @@ import Profile from "./profile/Profile";
 
 const Main = () => {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-      {/* Professional subtle background pattern */}
+    <div className="relative min-h-screen overflow-x-hidden bg-background grain-overlay">
+      {/* Subtle dot grid pattern */}
       <div className="fixed inset-0 -z-10">
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_rgba(0,0,0,0.03)_1px,_transparent_0)] dark:bg-[radial-gradient(circle_at_1px_1px,_rgba(255,255,255,0.03)_1px,_transparent_0)] bg-[size:32px_32px]" />
 
-        {/* Subtle gradient orbs */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-950/20 dark:to-purple-950/20 rounded-full blur-3xl opacity-30" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-indigo-100 to-cyan-100 dark:from-indigo-950/20 dark:to-cyan-950/20 rounded-full blur-3xl opacity-30" />
+        {/* Large ambient gradient orbs */}
+        <div className="absolute top-0 right-1/4 w-[800px] h-[800px] bg-gradient-to-br from-emerald-200/20 to-cyan-200/10 dark:from-emerald-900/10 dark:to-cyan-900/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-violet-200/10 to-emerald-200/10 dark:from-violet-900/5 dark:to-emerald-900/5 rounded-full blur-[120px]" />
       </div>
 
       <Header />
-      <main className="relative pt-16">
+      <main className="relative">
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
@@ -33,46 +32,46 @@ const Main = () => {
         </motion.div>
 
         <motion.div
-          initial={{opacity: 0}}
-          whileInView={{opacity: 1}}
+          initial={{opacity: 0, y: 40}}
+          whileInView={{opacity: 1, y: 0}}
           viewport={{once: true, margin: "-100px"}}
-          transition={{duration: 0.5}}
+          transition={{duration: 0.7, ease: "easeOut"}}
         >
           <Skills />
         </motion.div>
 
         <motion.div
-          initial={{opacity: 0}}
-          whileInView={{opacity: 1}}
+          initial={{opacity: 0, y: 40}}
+          whileInView={{opacity: 1, y: 0}}
           viewport={{once: true, margin: "-100px"}}
-          transition={{duration: 0.5}}
+          transition={{duration: 0.7, ease: "easeOut"}}
         >
           <Education />
         </motion.div>
 
         <motion.div
-          initial={{opacity: 0}}
-          whileInView={{opacity: 1}}
+          initial={{opacity: 0, y: 40}}
+          whileInView={{opacity: 1, y: 0}}
           viewport={{once: true, margin: "-100px"}}
-          transition={{duration: 0.5}}
+          transition={{duration: 0.7, ease: "easeOut"}}
         >
           <WorkExperience />
         </motion.div>
 
         <motion.div
-          initial={{opacity: 0}}
-          whileInView={{opacity: 1}}
+          initial={{opacity: 0, y: 40}}
+          whileInView={{opacity: 1, y: 0}}
           viewport={{once: true, margin: "-100px"}}
-          transition={{duration: 0.5}}
+          transition={{duration: 0.7, ease: "easeOut"}}
         >
           <SideProjects />
         </motion.div>
 
         <motion.div
-          initial={{opacity: 0}}
-          whileInView={{opacity: 1}}
+          initial={{opacity: 0, y: 40}}
+          whileInView={{opacity: 1, y: 0}}
           viewport={{once: true, margin: "-100px"}}
-          transition={{duration: 0.5}}
+          transition={{duration: 0.7, ease: "easeOut"}}
         >
           <Profile />
         </motion.div>

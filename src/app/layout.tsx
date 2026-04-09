@@ -3,9 +3,9 @@ import "@/index.css";
 import {StyleProvider} from "@/contexts/StyleContext";
 
 export const metadata = {
-  title: "Naga Nikhil Bijjala",
+  title: "Naga Nikhil Bijjala | UI/UX Engineer",
   description:
-    "Software Engineer specializing in full-stack development with expertise in React, Next.js, Node.js, Spring Boot, and cloud technologies.",
+    "UI/UX Engineer crafting intuitive digital experiences with expertise in React, Next.js, Design Systems, and modern frontend architecture.",
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg"

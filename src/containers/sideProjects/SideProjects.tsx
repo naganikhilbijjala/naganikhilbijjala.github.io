@@ -6,15 +6,17 @@ import {FaGithub, FaExternalLinkAlt} from "react-icons/fa";
 export default function SideProjects() {
   const projects = [
     {
-      name: "FinPilot - Precision Portfolio Analytics",
+      name: "FinPilot",
+      tagline: "Precision Portfolio Analytics",
       description:
-        "A comprehensive portfolio management platform for tracking investment allocations across countries and asset classes. Features include CAGR and XIRR calculations for SIPs, IPO watchlist management, real-time portfolio analytics, and performance tracking. Built with modern web technologies for seamless financial analysis.",
+        "A comprehensive portfolio management platform for tracking investment allocations across countries and asset classes. Features include CAGR and XIRR calculations for SIPs, IPO watchlist management, real-time portfolio analytics, and performance tracking.",
       techStack: ["Java", "Spring Boot", "PostgreSQL"],
       githubLink: "https://github.com/naganikhilbijjala/finpilot",
       liveLink: "https://precision-portfolio-analytics.vercel.app/"
     },
     {
-      name: "BioCraft - Bio Data Builder",
+      name: "BioCraft",
+      tagline: "Bio Data Builder",
       description:
         "A modern web application for creating professional bio data PDFs for marriage proposals with customizable templates and instant PDF generation.",
       techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -22,160 +24,120 @@ export default function SideProjects() {
       liveLink: "https://bio-data-builder.vercel.app/"
     },
     {
-      name: "Project Name 3",
+      name: "LedgeWise",
+      tagline: "Smart Financial Ledger",
       description:
-        "A third project demonstrating your versatility as a developer.",
-      techStack: ["Python", "Django", "Docker"],
-      githubLink: "https://github.com/yourusername/project3",
-      liveLink: "https://project3.com"
+        "A modern financial management application for tracking expenses, managing ledgers, and gaining insights into spending patterns. Built with a type-safe full-stack architecture, Prisma ORM, and comprehensive test coverage.",
+      techStack: ["Next.js", "TypeScript", "Prisma"],
+      githubLink: "https://github.com/naganikhilbijjala/ledge-wise",
+      liveLink: "https://ledge-wise.vercel.app/"
     }
   ];
 
-  const containerVariants = {
-    hidden: {opacity: 0},
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: {opacity: 0, y: 20},
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
-  const getGradientColor = (index: number) => {
-    const gradients = [
-      "from-purple-500 to-pink-500",
-      "from-blue-500 to-cyan-500",
-      "from-green-500 to-teal-500"
-    ];
-    return gradients[index % gradients.length];
-  };
+  const accentColors = [
+    { bg: "bg-emerald-50 dark:bg-emerald-500/10", text: "text-emerald-600 dark:text-emerald-400", border: "border-emerald-200/50 dark:border-emerald-500/20", dot: "bg-emerald-500" },
+    { bg: "bg-sky-50 dark:bg-sky-500/10", text: "text-sky-600 dark:text-sky-400", border: "border-sky-200/50 dark:border-sky-500/20", dot: "bg-sky-500" },
+    { bg: "bg-violet-50 dark:bg-violet-500/10", text: "text-violet-600 dark:text-violet-400", border: "border-violet-200/50 dark:border-violet-500/20", dot: "bg-violet-500" },
+  ];
 
   return (
-    <div id="sideprojects" className="relative py-16 px-8 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/3 -left-32 w-96 h-96 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 -right-32 w-96 h-96 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full blur-3xl" />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto">
+    <div id="sideprojects" className="relative py-24 px-6">
+      <div className="relative max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
-          initial={{opacity: 0, y: -20}}
+          initial={{opacity: 0, y: 20}}
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true, margin: "-100px"}}
           transition={{duration: 0.6}}
-          className="text-center mb-12"
+          className="mb-14"
         >
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <span className="text-sm font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3 block">
+            Projects
+          </span>
+          <h2 className="text-4xl lg:text-5xl font-extrabold tracking-[-0.035em] text-foreground mb-3">
             Side Projects
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          </h2>
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-xl">
             Personal projects and open-source contributions
           </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{once: true, margin: "-100px"}}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              whileHover={{y: -10, scale: 1.02}}
-              transition={{type: "spring", stiffness: 300}}
-              className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
-            >
-              {/* Gradient top border */}
-              <div
-                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${getGradientColor(
-                  index
-                )}`}
-              />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => {
+            const accent = accentColors[index % accentColors.length];
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{once: true}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{y: -6}}
+                className="group relative flex flex-col bg-white/70 dark:bg-white/[0.04] rounded-2xl border border-slate-200/60 dark:border-white/[0.06] hover:border-emerald-300/50 dark:hover:border-emerald-500/20 backdrop-blur-sm transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/[0.06] overflow-hidden"
+              >
+                {/* Card content */}
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Project header */}
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className={`w-3 h-3 rounded-full ${accent.dot} mt-1.5 shrink-0`} />
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground leading-tight">
+                        {project.name}
+                      </h3>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+                        {project.tagline}
+                      </p>
+                    </div>
+                  </div>
 
-              {/* Card content */}
-              <div className="p-6 space-y-4">
-                {/* Project name with gradient on hover */}
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text transition-all duration-300">
-                  {project.name}
-                </h3>
+                  {/* Description */}
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 flex-1">
+                    {project.description}
+                  </p>
 
-                {/* Description */}
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed min-h-[60px]">
-                  {project.description}
-                </p>
+                  {/* Tech stack tags */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.techStack.map((tech, i) => (
+                      <span
+                        key={i}
+                        className={`px-2.5 py-1 text-xs font-medium rounded-md ${accent.bg} ${accent.text} border ${accent.border}`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Tech stack tags */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.techStack.map((tech, i) => (
-                    <motion.span
-                      key={i}
-                      initial={{opacity: 0, scale: 0.8}}
-                      whileInView={{opacity: 1, scale: 1}}
-                      viewport={{once: true}}
-                      transition={{duration: 0.3, delay: 0.1 * i}}
-                      whileHover={{scale: 1.1}}
-                      className={`px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${getGradientColor(
-                        i
-                      )} text-white shadow-md`}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
+                  {/* Project links */}
+                  <div className="flex gap-3 pt-4 border-t border-slate-100 dark:border-white/[0.04]">
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      >
+                        <FaGithub className="text-base" />
+                        <span>Code</span>
+                      </a>
+                    )}
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200"
+                      >
+                        <FaExternalLinkAlt className="text-xs" />
+                        <span>Live</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
-
-                {/* Project links */}
-                <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  {project.githubLink && (
-                    <motion.a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{scale: 1.05}}
-                      whileTap={{scale: 0.95}}
-                      className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all duration-300"
-                    >
-                      <FaGithub className="text-lg" />
-                      <span>GitHub</span>
-                    </motion.a>
-                  )}
-                  {project.liveLink && (
-                    <motion.a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{scale: 1.05}}
-                      whileTap={{scale: 0.95}}
-                      className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-md"
-                    >
-                      <FaExternalLinkAlt className="text-sm" />
-                      <span>Live Demo</span>
-                    </motion.a>
-                  )}
-                </div>
-              </div>
-
-              {/* Hover gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

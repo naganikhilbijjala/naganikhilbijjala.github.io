@@ -192,7 +192,7 @@ const greeting: Greeting = {
   username: "Naga Nikhil Bijjala",
   title: "Naga Nikhil Bijjala",
   subTitle:
-    "Full Stack Developer with expertise in Next.js, React, NestJS, TypeScript, Node.js, Java, Spring Boot, and cloud-native applications on AWS.",
+    "UI/UX Engineer crafting intuitive digital experiences with expertise in Next.js, React, TypeScript, Design Systems, and modern frontend architecture.",
   resumeLink:
     "https://drive.google.com/file/d/1lKx0x4DW703pRtErj6XmkBLadEuSMnrg/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
