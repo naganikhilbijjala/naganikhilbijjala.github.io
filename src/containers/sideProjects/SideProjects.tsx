@@ -24,13 +24,13 @@ export default function SideProjects() {
       liveLink: "https://bio-data-builder.vercel.app/"
     },
     {
-      name: "Project Name 3",
-      tagline: "Developer Toolkit",
+      name: "LedgeWise",
+      tagline: "Smart Financial Ledger",
       description:
-        "A third project demonstrating your versatility as a developer.",
-      techStack: ["Python", "Django", "Docker"],
-      githubLink: "https://github.com/yourusername/project3",
-      liveLink: "https://project3.com"
+        "A modern financial management application for tracking expenses, managing ledgers, and gaining insights into spending patterns. Built with a type-safe full-stack architecture, Prisma ORM, and comprehensive test coverage.",
+      techStack: ["Next.js", "TypeScript", "Prisma"],
+      githubLink: "https://github.com/naganikhilbijjala/ledge-wise",
+      liveLink: "https://ledge-wise.vercel.app/"
     }
   ];
 

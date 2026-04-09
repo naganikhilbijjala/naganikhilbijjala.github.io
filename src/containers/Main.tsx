@@ -22,7 +22,7 @@ const Main = () => {
       </div>
 
       <Header />
-      <main className="relative pt-16">
+      <main className="relative">
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}

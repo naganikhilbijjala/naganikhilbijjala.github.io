@@ -10,7 +10,7 @@ export default function Greeting() {
     return null;
   }
   return (
-    <div className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
+    <div className="relative min-h-[80vh] md:min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
       {/* Subtle gradient mesh background */}
       <div className="absolute inset-0">
         <motion.div
