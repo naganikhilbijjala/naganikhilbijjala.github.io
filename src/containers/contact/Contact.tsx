@@ -2,176 +2,97 @@ import React from "react";
 import SocialMedia from "@/components/socialMedia";
 import {contactInfo} from "@/portfolio";
 import {motion} from "framer-motion";
-import {FaPhone, FaEnvelope, FaPaperPlane} from "react-icons/fa";
+import {FaEnvelope, FaArrowRight} from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div id="contact" className="relative py-20 px-8 overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/2 -left-48 w-96 h-96 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 -right-48 w-96 h-96 bg-gradient-to-br from-pink-400 to-orange-400 rounded-full blur-3xl" />
-      </div>
-
+    <div id="contact" className="relative py-24 px-6">
       <motion.div
         initial={{opacity: 0, y: 20}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true, margin: "-100px"}}
-        transition={{duration: 0.8}}
-        className="relative max-w-7xl mx-auto"
+        transition={{duration: 0.7}}
+        className="relative max-w-6xl mx-auto"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Contact Information */}
-          <motion.div
-            initial={{opacity: 0, x: -40}}
-            whileInView={{opacity: 1, x: 0}}
-            viewport={{once: true}}
-            transition={{duration: 0.8, delay: 0.2}}
-            className="space-y-8"
+        {/* Ambient glow behind the section */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-emerald-400/[0.06] dark:bg-emerald-500/[0.04] rounded-full blur-[80px]" />
+        </div>
+
+        <div className="text-center max-w-2xl mx-auto">
+          {/* Label */}
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-sm font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-3 block"
           >
-            {/* Header */}
-            <div>
-              <motion.h1
-                className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-                initial={{opacity: 0, y: -20}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{duration: 0.6}}
-              >
-                {contactInfo.title}
-              </motion.h1>
-              <motion.p
-                className="text-lg text-gray-600 dark:text-gray-400 max-w-md"
-                initial={{opacity: 0}}
-                whileInView={{opacity: 1}}
-                viewport={{once: true}}
-                transition={{duration: 0.6, delay: 0.2}}
-              >
-                {contactInfo.subtitle}
-              </motion.p>
-            </div>
+            Contact
+          </motion.span>
 
-            {/* Contact Details Card */}
-            <motion.div
-              initial={{opacity: 0, scale: 0.95}}
-              whileInView={{opacity: 1, scale: 1}}
-              viewport={{once: true}}
-              transition={{duration: 0.6, delay: 0.3}}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 space-y-6 border border-gray-100 dark:border-gray-700"
+          {/* Title */}
+          <motion.h2
+            className="text-4xl lg:text-5xl font-extrabold tracking-[-0.035em] text-foreground mb-5"
+            initial={{opacity: 0, y: 15}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            transition={{duration: 0.6, delay: 0.1}}
+          >
+            {contactInfo.title}
+          </motion.h2>
+
+          {/* Subtitle */}
+          <motion.p
+            className="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed"
+            initial={{opacity: 0, y: 10}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            transition={{duration: 0.5, delay: 0.2}}
+          >
+            {contactInfo.subtitle}
+          </motion.p>
+
+          {/* Email card */}
+          <motion.div
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true}}
+            transition={{duration: 0.6, delay: 0.3}}
+            className="mb-10"
+          >
+            <motion.a
+              href={`mailto:${contactInfo.email_address}`}
+              whileHover={{y: -3}}
+              className="group inline-flex items-center gap-4 px-8 py-5 bg-white/70 dark:bg-white/[0.04] rounded-2xl border border-slate-200/60 dark:border-white/[0.06] hover:border-emerald-300/50 dark:hover:border-emerald-500/20 backdrop-blur-sm transition-all duration-400 hover:shadow-lg hover:shadow-emerald-500/[0.06]"
             >
-              {/* Phone Number */}
-              {contactInfo.number && (
-                <motion.div whileHover={{x: 5}} className="group">
-                  <a
-                    href={`tel:${contactInfo.number}`}
-                    className="flex items-center gap-4 text-gray-700 dark:text-gray-100 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300"
-                  >
-                    <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full text-white group-hover:scale-110 transition-transform duration-300">
-                      <FaPhone className="text-lg" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
-                        Phone
-                      </p>
-                      <p className="text-lg font-semibold">
-                        {contactInfo.number}
-                      </p>
-                    </div>
-                  </a>
-                </motion.div>
-              )}
-
-              {/* Email Address */}
-              <motion.div whileHover={{x: 5}} className="group">
-                <a
-                  href={`mailto:${contactInfo.email_address}`}
-                  className="flex items-center gap-4 text-gray-700 dark:text-gray-100 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:bg-clip-text transition-all duration-300"
-                >
-                  <div className="p-3 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full text-white group-hover:scale-110 transition-transform duration-300">
-                    <FaEnvelope className="text-lg" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Email
-                    </p>
-                    <p className="text-lg font-semibold break-all text-gray-900 dark:text-white">
-                      {contactInfo.email_address}
-                    </p>
-                  </div>
-                </a>
-              </motion.div>
-
-              {/* Divider */}
-              <div className="border-t border-gray-200 dark:border-gray-700 my-6" />
-
-              {/* Social Media */}
-              <div>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                  Connect with me
-                </p>
-                <SocialMedia />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 transition-shadow duration-300">
+                <FaEnvelope className="text-lg" />
               </div>
-            </motion.div>
-
-            {/* Call to Action Button */}
-            <motion.div
-              initial={{opacity: 0, y: 20}}
-              whileInView={{opacity: 1, y: 0}}
-              viewport={{once: true}}
-              transition={{duration: 0.6, delay: 0.5}}
-            >
-              <motion.a
-                href={`mailto:${contactInfo.email_address}`}
-                whileHover={{scale: 1.05}}
-                whileTap={{scale: 0.95}}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-              >
-                <FaPaperPlane className="text-lg" />
-                <span>Send Message</span>
-              </motion.a>
-            </motion.div>
+              <div className="text-left">
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider mb-0.5">
+                  Email me at
+                </p>
+                <p className="text-base font-semibold text-foreground">
+                  {contactInfo.email_address}
+                </p>
+              </div>
+              <FaArrowRight className="ml-2 text-slate-400 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all duration-300" />
+            </motion.a>
           </motion.div>
 
-          {/* Illustration/Image */}
+          {/* Social links */}
           <motion.div
-            initial={{opacity: 0, x: 40}}
-            whileInView={{opacity: 1, x: 0}}
+            initial={{opacity: 0, y: 15}}
+            whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
-            transition={{duration: 0.8, delay: 0.4}}
-            className="relative"
+            transition={{duration: 0.5, delay: 0.4}}
+            className="flex flex-col items-center gap-4"
           >
-            <div className="relative">
-              {/* Decorative gradient circle behind image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl" />
-
-              {/* Decorative elements */}
-              <motion.div
-                className="absolute top-10 -right-10 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 180, 360]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                style={{opacity: 0.3}}
-              />
-              <motion.div
-                className="absolute bottom-10 -left-10 w-16 h-16 bg-gradient-to-br from-pink-400 to-orange-400 rounded-full"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  rotate: [360, 180, 0]
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-                style={{opacity: 0.3}}
-              />
-            </div>
+            <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+              Or find me on
+            </p>
+            <SocialMedia />
           </motion.div>
         </div>
       </motion.div>
