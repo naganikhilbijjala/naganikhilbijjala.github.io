@@ -1,0 +1,59 @@
+---
+title: "Hello, world — how this blog works"
+description: "A tour of the writing setup behind this site: MDX files in Git, a GitHub-backed admin editor, syntax highlighting and callouts."
+date: 2026-10-25
+tags: [meta, nextjs]
+draft: false
+---
+
+I wanted a place to write that is as low-friction as my editor. No database, no hosted CMS — just files in the same repository as the site, with a small admin page on top.
+
+## The setup
+
+Every post is an `.mdx` file in `content/blog/`. I write them at `/keystatic`, an editor that signs in with GitHub, gives me fields for the title, tags and description, and commits the result to the repo. Vercel then rebuilds the site.
+
+Under the hood a post is just frontmatter plus Markdown:
+
+```mdx title="content/blog/my-post.mdx"
+---
+title: "My post"
+description: "One sentence for search results and link previews."
+date: 2026-11-01
+tags: [react, performance]
+draft: true
+---
+
+Write Markdown here.
+```
+
+Posts marked as drafts stay off the live site. Each published post gets its own page, an OpenGraph image, JSON-LD for search engines, and an entry in the sitemap.
+
+## What you can write
+
+Standard Markdown works, including GFM tables and task lists:
+
+| Feature | Supported |
+| --- | --- |
+| Syntax highlighting | Yes |
+| Table of contents | Yes |
+| Tags + RSS | Yes |
+
+Code blocks are highlighted at build time, so no JavaScript ships to the reader. Line highlighting and line numbers work too:
+
+```ts showLineNumbers {2}
+export function sum(values: number[]) {
+  return values.reduce((a, b) => a + b, 0); // highlighted
+}
+```
+
+Because it's MDX, I can drop in components when plain Markdown isn't enough:
+
+<Callout type="note">
+  This box is a React component used inside a post. Use `type="warning"` for the amber variant.
+</Callout>
+
+> Good writing is rewriting. Good tooling makes you want to.
+
+## What's next
+
+More notes on full-stack engineering, data pipelines, system design and the occasional postmortem. Subscribe via [RSS](/rss.xml) if that's your thing.

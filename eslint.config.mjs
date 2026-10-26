@@ -111,6 +111,7 @@ export default tseslint.config(
       '.next/**',
       'node_modules/**',
       'out/**',
+      'next-env.d.ts',
       'build/**',
       'dist/**',
       '.cache/**',
