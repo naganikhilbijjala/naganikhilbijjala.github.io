@@ -1,12 +1,15 @@
 ---
-title: "Hello, world — how this blog works"
-description: "A tour of the writing setup behind this site: MDX files in Git, a GitHub-backed admin editor, syntax highlighting and callouts."
+title: Hello, world — how this blog works
+description: >-
+  A tour of the writing setup behind this site: MDX files in Git, a
+  GitHub-backed admin editor, syntax highlighting and callouts.
 date: 2026-10-25
-tags: [meta, nextjs]
+tags:
+  - meta
+  - nextjs
 draft: false
 ---
-
-I wanted a place to write that is as low-friction as my editor. No database, no hosted CMS — just files in the same repository as the site, with a small admin page on top.
+New edits
 
 ## The setup
 
@@ -32,15 +35,15 @@ Posts marked as drafts stay off the live site. Each published post gets its own 
 
 Standard Markdown works, including GFM tables and task lists:
 
-| Feature | Supported |
-| --- | --- |
-| Syntax highlighting | Yes |
-| Table of contents | Yes |
-| Tags + RSS | Yes |
+| Feature             | Supported |
+| ------------------- | --------- |
+| Syntax highlighting | Yes       |
+| Table of contents   | Yes       |
+| Tags + RSS          | Yes       |
 
 Code blocks are highlighted at build time, so no JavaScript ships to the reader. Line highlighting and line numbers work too:
 
-```ts showLineNumbers {2}
+```ts showLineNumbers
 export function sum(values: number[]) {
   return values.reduce((a, b) => a + b, 0); // highlighted
 }
